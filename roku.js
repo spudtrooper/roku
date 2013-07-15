@@ -112,15 +112,12 @@ Roku.Controller.prototype.appsFromXml_ = function(xml) {
  * @param {function(!Array.<!Roku.Channel>, !Roku.Controller}:} callback
  */
 Roku.Controller.prototype.getApps = function(callback) {
-  log('getApps');
   var thiz = this;
   if (this.apps_) {
-    log('getApps_: have apps');
     callback(this.apps_, this);
     return;
   }
   var url = getBaseUrl() + 'apps.php?n=' + this.host_.replace(/.*\./, '');
-  log('getApps_: looking up apps - ' + url);
   ajax(url, function(xml) {
     var apps = thiz.appsFromXml_(xml);
     log('Found ' + (apps ? apps.length : null) + ' apps');
@@ -264,7 +261,6 @@ Roku.Provider.prototype.getController_ = function(hostByte, callback) {
   var host = '192.168.1.' + hostByte;
   var controller = new Roku.Controller(host);
   var thiz = this;
-  log('Trying to get controller from ' + host);
   controller.getApps(function(apps, c) {
     if (!thiz.looking_) {
       return;
