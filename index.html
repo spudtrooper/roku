@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>Roku</title>
+    <link rel="stylesheet" type="text/css" href="roku.css"></link>
+    <script src="roku.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript"></script>
+  </head>
+  <script type="text/javascript">
+    app = new Roku.App();
+    function onLoad() {
+    app.init();
+    }
+  </script>
+  <body onload="onLoad()">
+
+    <div id="host-wrapper">
+      <form>
+	<input type="text" name="host" id="host">
+	<input type="submit" value="Set host">
+      </form>
+      <a href="#" onclick="app.reset()">Reset</a>
+    </div>
+
+    <div id="channels"></div>
+
+    <div id="controller">
+      
+      <a href="#" onclick="app.pressKey('Home'); return false">
+	<img src="home.png" />
+      </a>
+      <br/>
+      <table border="0">
+	<tr>
+	  <td></td>
+	  <td><a href="#" onclick="app.pressKey('Up'); return false">
+	      <img src="up.png" /></a>
+	  </td>
+	  <td></td>
+	</tr>
+	<tr>
+	  <td><a href="#" onclick="app.pressKey('Left'); return false">
+	      <img src="back.png" /></a></td>
+	  <td>
+	    <a href="#" onclick="app.pressKey('Select'); return false">
+	      <img src="select.png" /></a>
+	    <a href="#" onclick="app.pressKey('Play'); return false">
+	      <img src="play.png" /></a>
+	  </td>
+	  <td><a href="#" onclick="app.pressKey('Right'); return false">
+	      <img src="next.png" /></a>
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td><a href="#" onclick="app.pressKey('Down'); return false">
+	      <img src="down.png" /></a></td>
+	  <td></td>
+	</tr>
+      </table>  
+    </div>
+    
+    <iframe src="iframe.html" style="display:none" id="iframe"></iframe>
+
+</body>
+</html>
