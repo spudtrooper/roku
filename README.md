@@ -4,4 +4,6 @@ the same network as your roku devices. There is no security, btw. You
 can override the host of the device you want to control using the host
 field at the top of the page.
 
-This is pretty ghetto.
+This is pretty ghetto. Here is a screen shot.
+
+http://jeffpalm.com/blog/images/roku-ss.png
