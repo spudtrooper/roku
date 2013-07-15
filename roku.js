@@ -1,8 +1,4 @@
-/**
- * Classes from controlling a roku.
- */
-Roku = typeof Roku != 'undefined' ? Roku : {};
-
+Roku = {};
 
 /**
  * A roku controller.

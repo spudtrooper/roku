@@ -50,12 +50,14 @@ Roku.App.prototype.initRoku_ = function(roku) {
 };
 
 function getParams() {
+  /*
+   * http://stackoverflow.com/questions/979975/how-to-get-the-value-from-url-parameter
+   */
   var params = {};
   var query = window.location.search.substring(1);
   var vars = query.split("&");
   for (var i=0;i<vars.length;i++) {
     var pair = vars[i].split("=");
-    	// If first entry with this name
     if (typeof params[pair[0]] === "undefined") {
       params[pair[0]] = pair[1];
     } else if (typeof params[pair[0]] === "string") {
