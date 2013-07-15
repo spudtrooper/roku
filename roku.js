@@ -22,18 +22,6 @@ Roku.Controller.prototype.getHost = function() {
   return this.host_;
 }
 
-/**
- * Sets the host value.
- * @param {string} host The new host value.
- */
-Roku.Controller.prototype.setHost = function(host) {
-  if (this.host_ == host) {
-    return;
-  }
-  this.host_ = host;
-  this.reset_();
-};
-
 Roku.Controller.prototype.postToUrl_ = function(url, params) {
   var iframe = document.getElementById('iframe');
   if (!iframe) {
